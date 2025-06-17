@@ -1,0 +1,52 @@
+@use 'overrides';
+@use 'input';
+@use 'form';
+@use 'table';
+
+html, body, #root {
+  height : 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+dl, dd, p {
+  margin : 0;
+}
+
+h1,h2,h3,h4,h5 {
+  color: var(--secondary-color);
+}
+
+hr {
+  margin: .25em 0;
+  padding: 0;
+  opacity:1;
+  border : 2px solid rgba(var(--secondary-color-rgb),.5);
+}
+
+select {
+  cursor: pointer;
+}
+
+#root {
+  display:grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.italics {
+  font-style:italic;
+}
+
+.modal-content {
+  max-height:80vh;
+  & > * {
+    overflow-y:auto;
+    max-height:100%;
+  }
+}
+
+.clickable {
+  cursor : pointer;
+}

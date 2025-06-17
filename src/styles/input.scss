@@ -1,0 +1,32 @@
+﻿label {
+  color: rgba(var(--bs-body-color-rgb), .85) !important;
+}
+
+input {
+
+  color: rgba(var(--bs-body-color-rgb), .85) !important;
+
+  &::file-selector-button {
+    background:var(--primary-background) !important;
+    color: rgba(var(--primary-color-rgb), .85) !important;
+  }
+
+  &[required] ~ label::after {
+    content: '*';
+    color: red;
+  }
+
+  &[type="checkbox"] {
+    cursor:pointer;
+  }
+}
+
+input, textarea {
+  &:not(:focus) ~ p.info {
+    display:none;
+  }
+
+  &:focus ~ p.info {
+    display:block;
+  }
+}

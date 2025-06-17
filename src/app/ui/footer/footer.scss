@@ -1,0 +1,14 @@
+footer {
+  border-top: solid 1px rgba(var(--secondary-color-rgb), .5);
+  padding: .5em 0;
+
+  & > div {
+    display : flex;
+    justify-content: space-evenly;
+  }
+}
+
+#social-links-container {
+  display : flex;
+  gap:.5em;
+}

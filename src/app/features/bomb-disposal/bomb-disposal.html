@@ -1,0 +1,75 @@
+<div class="container-fluid radiation-level-{{radiationLevel}} p-3 h-100">
+    
+    <div class="d-flex container gap-3 justify-content-between">
+        
+        <div id="game-status" class="d-flex flex-column align-items-center ">
+            @if (gameInProgress || gameResult.length) {
+                
+                @if (gameResult.length){
+                    <div>
+                        <h4>{{gameResult}}</h4>
+                    </div>
+                }
+            
+                <dl>
+                    <div id="radiation-level" class="d-flex gap-3">
+                        <dt class="text-secondary">Radiation Level</dt>
+                        <dd>{{radiationLevel === 3 ? "CRITICAL" : radiationLevel}}</dd>
+                    </div>
+                
+                    <div id="powerups">
+                        @for (kvp of powerups; track $index) {
+                            <div class="d-flex justify-content-between w-100">
+                                <dt class="text-secondary">{{Powerup[kvp[0]]}}</dt>
+                                <dd>{{kvp[1]}}</dd>
+                            </div>
+                        }
+                    </div>
+                </dl>
+            }
+            <div>
+                <button (click)="newGame()" class="btn" >New Game</button>
+            </div>
+        </div>
+        
+        <div class="d-flex align-self-center">
+            <div id="gameboard">
+                @for (row of gameBoard; track $index) {
+                    <div class="game-row">
+                       @for(space of row; track $index) {
+                           
+                        <div class="space {{space.isUnlocked ? State[space.state] : ''}} {{space.isCleared ? 'cleared' : ''}}"
+                            (click)="unlockSpace(space)"
+                            (contextmenu)="markSpaceAsDangerous(space, $event)"
+                        >
+                            
+                            @if (space.isDangerous)  {
+                                <span><fa-icon [icon]="faWarning" class="text-warning"/></span>
+                            } @else if (!space.isUnlocked) {
+                                <span>?</span>
+                            } @else {
+                                @switch(space.state) {
+                                    @case(State.safe) {
+                                        <p>{{space.dangerousAdjacentCount}}</p>
+                                        <span><fa-icon [icon]="faFlag"></fa-icon></span>
+                                    } 
+                                    @case(State.powerup){
+                                        <span><fa-icon [icon]="faShield"></fa-icon></span>
+                                    }
+                                    @case(State.bomb){
+                                        <span><fa-icon [icon]="faBomb"></fa-icon></span>
+                                    }
+                                    @case(State.radioactive){
+                                        <span><fa-icon [icon]="faBiohazard"></fa-icon></span>
+                                    } 
+                                }
+                            }
+                        </div>
+                       }     
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

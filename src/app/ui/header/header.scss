@@ -1,0 +1,8 @@
+header {
+  border-bottom: solid 1px rgba(var(--secondary-color-rgb), .5);
+}
+
+nav {
+  display : grid;
+  grid-template-columns: 10% auto 10%;
+}

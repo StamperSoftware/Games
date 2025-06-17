@@ -1,0 +1,84 @@
+﻿@use '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
+:root {
+  color-scheme:dark;
+
+  --primary-color:white;
+  --primary-color-rgb:255,255,255;
+  --faded-primary-rgb:255,255,255,.5;
+  
+  --secondary-color:#C2983D; /*mustard*/
+  --secondary-color-rgb:194,152,61; /*mustard*/
+  --faded-secondary-rgb:194,152,61,.5;
+  
+  --primary-background:#101010;
+  --primary-background-rgb:16,16,16;
+
+  --active: #928a74; /*mushroom*/
+  --active-rgb:147,138,116; /*mushroom*/
+
+  --bs-primary: var(--primary-color);
+  --bs-primary-rgb:  var(--primary-color-rgb);
+
+  --bs-secondary: var(--secondary-color);
+  --bs-secondary-rgb: var(--secondary-color-rgb);
+
+  --bs-primary-text-emphasis: var(--secondary-color);
+  --bs-secondary-text-emphasis: var(--primary-color);
+
+  --bs-primary-bg-subtle: var(--primary-color);
+  --bs-secondary-bg-subtle: var(--secondary-color);
+
+  --bs-primary-border-subtle: var(--primary-color);
+  --bs-secondary-border-subtle: var(--secondary-color);
+
+  --bs-body-color: var(--primary-color);
+  --bs-body-color-rgb: var(--primary-color-rgb);
+
+  --bs-body-bg: var(--primary-background);
+  --bs-body-bg-rgb: var(--primary-background-rgb);
+
+  --bs-emphasis-color: var(--primary-color);
+  --bs-emphasis-color-rgb: var(--primary-color-rgb);
+
+  --bs-secondary-color: var(--secondary-color);
+  --bs-secondary-color-rgb: var(--secondary-color-rgb);
+
+  --bs-link-color: var(--secondary-color);
+  --bs-link-color-rgb: var(--secondary-color-rgb);
+  --bs-link-decoration: none;
+
+  --bs-link-hover-color: var(--active);
+  --bs-link-hover-color-rgb: var(--active-rgb);
+
+  --bs-border-color: rgba(var(--secondary-color-rgb),.5);
+
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-active-bg:var(--active);
+  --bs-dropdown-link-active-color:var(--primary-background);
+  --bs-dropdown-link-hover-bg:unset;
+}
+
+.modal {
+  --bs-modal-margin:5em;
+}
+
+.table {
+  --bs-table-hover-bg: rgba(var(--bs-secondary-color-rgb), 0.05);
+}
+
+.nav-link {
+  --bs-nav-link-hover-color : var(--secondary-color);
+}
+
+.ng-fa-icon {
+  cursor:pointer;
+}
+
+.btn {
+  --bs-btn-padding-x: .5rem;
+  --bs-btn-padding-y: .25rem;
+}
