@@ -1,0 +1,47 @@
+<div>
+    <h4>Phrase of the Day</h4>
+    
+    <div class="d-flex gap-3">
+        <div id="secret-phrase">
+            <form id="guess-form" (ngSubmit)="checkPhrase()" [formGroup]="fg">
+                <div class="d-flex flex-column gap-3">
+                    <div class="d-flex">
+                        @for (letter of secretPhrase; track $index) {
+                            @if (letter.letter === ' ') {
+                                <span class="space {{letter.isWrong ? 'wrong' : ''}}" >&nbsp;</span>   
+                            }
+                            @else {
+                                <input type="text" maxlength="1" name="letter{{letter.index}}" autocomplete="off" formControlName="letter{{letter.index}}" placeholder="_"
+                                    class="secret-letter 
+                                    {{letter.hasBeenRevealed ? 'revealed' : ''}}
+                                    {{letter.isMatched ? 'isMatch' : ''}}
+                                    {{letter.isWrong ? 'wrong' : ''}}
+                                    " 
+                                />
+                            }
+                        }
+                    </div>
+            @if (gameMessage.length) {
+                <div>
+                    <p>{{gameMessage}}</p>
+                </div>
+            }
+                    <button class="btn align-self-start {{gameWon ? 'd-none' : ''}}" [disabled]="this.fg.invalid" >Check Guess</button>
+                </div>
+            </form>
+        </div>
+        
+        @if (guesses.size) {
+            <div id="guess-list" class="d-flex gap-1">
+                <h4>Guesses:</h4>
+                <div>
+                    @for (guess of guesses; track $index) {
+                        <div class="wrong-guesses">{{guess}}</div>
+                    }
+                </div>
+            </div>
+            
+        }
+        
+    </div>
+</div>

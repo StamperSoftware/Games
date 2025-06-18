@@ -1,0 +1,44 @@
+.secret-letter {
+  border : solid 1px var(--secondary-color);
+  height:50px;
+  width:50px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  
+  span {
+    display:flex;
+  }
+  
+  &:not(.revealed, .guessed) {
+    & span {
+      display : none;
+    }
+  }
+  
+  &.wrong {
+    background-color : rgba(var(--bs-danger-rgb), .2)
+  }
+  
+  &.revealed {
+    background-color: var(--bs-success);
+  }
+  &.isMatch {
+    background-color: var(--bs-info);
+  }
+}
+.space {
+
+  width : 1em;
+  
+  &.wrong {
+    background-color : rgba(var(--bs-danger-rgb), .2)
+  }
+}
+
+
+.wrong-guesses {
+  text-transform: uppercase;
+}
