@@ -6,7 +6,6 @@ import { GameList } from "../game/list/list";
 @Component({
   selector: 'app-home',
     imports: [
-        RouterLink,
         PhraseOfTheDay,
         GameList
     ],
