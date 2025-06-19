@@ -2,15 +2,15 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 
 @Component({
-  selector: 'app-phrase-of-the-day',
+  selector: 'app-phrasele',
   imports: [
     FormsModule,
     ReactiveFormsModule
   ],
-  templateUrl: './phrase-of-the-day.html',
-  styleUrl: './phrase-of-the-day.scss'
+  templateUrl: './phrasele.html',
+  styleUrl: './phrasele.scss'
 })
-export class PhraseOfTheDay {
+export class Phrasele {
     
     gameWon = false;
 

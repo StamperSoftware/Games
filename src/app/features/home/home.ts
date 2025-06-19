@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink } from "@angular/router";
-import { PhraseOfTheDay } from "../phrase-of-the-day/phrase-of-the-day";
+import { Phrasele } from "../phrasele/phrasele";
 import { GameList } from "../game/list/list";
 
 @Component({
   selector: 'app-home',
     imports: [
-        PhraseOfTheDay,
+        Phrasele,
         GameList
     ],
   templateUrl: './home.html',
