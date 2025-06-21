@@ -1,0 +1,11 @@
+#alien-raider {
+  display:grid;
+  grid-template-rows: 1fr 9fr;
+  place-items: center;
+}
+
+
+canvas {
+  place-self: center;
+  border: solid 1px var(--primary-color);
+}
