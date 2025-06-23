@@ -1,5 +1,4 @@
-﻿import { Position } from "../models";
-import { Animatable } from "./gamescreen";
+﻿import { Position, Animatable } from "../models";
 
 export class Bullet implements Animatable {
     static id :number = 0;

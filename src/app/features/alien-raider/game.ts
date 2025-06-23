@@ -1,7 +1,6 @@
 ﻿import { Bullet, GameScreen, Spaceship, Dropship } from "../../classes";
-import { Position } from "../../models";
+import { Position, Animatable } from "../../models";
 import { ElementRef } from "@angular/core";
-import { Animatable } from "../../classes/gamescreen";
 
 export class Game extends GameScreen {
     
@@ -177,8 +176,9 @@ export class Game extends GameScreen {
     }
 
     killRandomAlien(){
+       
         if (!this.aliens) return;
-
+        
         const alien = this.getRandomAlien();
         if (!alien) return;
 

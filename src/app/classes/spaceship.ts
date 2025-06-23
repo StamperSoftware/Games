@@ -1,5 +1,4 @@
-﻿import { Position } from "../models";
-import { Animatable } from "./gamescreen";
+﻿import { Position, Animatable } from "../models";
 
 export class Spaceship implements Animatable {
     

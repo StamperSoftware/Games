@@ -1,5 +1,5 @@
 ﻿import { ElementRef, ViewChild } from "@angular/core";
-import { Position } from "../models";
+import {Animatable} from '../models'; 
 
 export abstract class GameScreen {
     
@@ -41,10 +41,4 @@ export abstract class GameScreen {
         this.items.forEach(item => item.animate());
         requestAnimationFrame(() => this.animate());
     }
-}
-
-export type Animatable = {
-    animate : () => void
-    name: string
-    getPosition:() => Position
 }
