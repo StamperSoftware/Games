@@ -9,7 +9,6 @@ export class Game extends GameScreen {
     spaceships:Spaceship[] = [];
     dropships:Dropship[] = [];
     private spawnTiming = 2500;
-    time = 0;
     background = new Image(500, 500);
     winGameCallback: ()=>void;
     currentlySpawning = false;
@@ -20,12 +19,9 @@ export class Game extends GameScreen {
         this.winGameCallback = winGameCallback
     }
 
-    
     override drawImage() {
-        ++this.time;
         this.ctx.fillStyle = 'black';
         this.ctx.drawImage(this.background,0,0);
-        this.ctx.fillText(`${Math.floor(this.time/100)} : ${this.time % 100}`, this.player?.getPosition().x ?? 0,   this.height - (this.player?.getPosition().y ?? 0));
         this.checkForCollisions();
         
         if (this.dropships.length === 0) {
